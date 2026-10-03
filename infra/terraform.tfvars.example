@@ -1,0 +1,16 @@
+aws_region    = "ap-south-1"
+project_name  = "cloudpulse"
+# Replace with your own trusted public IPv4 address/CIDR.
+allowed_cidrs = ["203.0.113.10/32"]
+# Bootstrap with no tasks; upload an image and set the dashboard secret first.
+desired_count = 0
+image_tag     = "bootstrap"
+# Optional: a regional ACM certificate and your domain's DNS record.
+certificate_arn = ""
+dashboard_domain = ""
+monitor_allowed_hosts = []
+alert_email = ""
+# Set the exact OIDC sub claim used by your repository for main.
+# Repositories with immutable claims use owner/repository IDs; see docs/AWS_DEPLOYMENT.md.
+github_oidc_subject = ""
+github_oidc_provider_arn = ""

@@ -1,0 +1,14 @@
+services:
+  cloudpulse:
+    build: .
+    ports: ["127.0.0.1:3000:3000"]
+    environment:
+      STORAGE: sqlite
+      SQLITE_PATH: /app/data/cloudpulse.db
+      DASHBOARD_TOKEN: ${DASHBOARD_TOKEN:?Set DASHBOARD_TOKEN in .env}
+      MONITOR_ALLOWED_HOSTS: ${MONITOR_ALLOWED_HOSTS:-}
+      CHECK_INTERVAL_SECONDS: "60"
+    volumes: ["cloudpulse-data:/app/data"]
+    restart: unless-stopped
+volumes:
+  cloudpulse-data:

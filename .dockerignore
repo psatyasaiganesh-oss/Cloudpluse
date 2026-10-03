@@ -1,0 +1,16 @@
+node_modules
+aws/node_modules
+aws/dist
+dist
+.git
+.env*
+data
+.wrangler
+.sites-runtime
+.openai
+infra/.terraform
+infra/*.tfstate*
+infra/*.tfvars
+*.zip
+*.tgz
+*.tsbuildinfo
